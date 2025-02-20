@@ -16,7 +16,7 @@ jobs:
       - name: Set up JDK 
         uses: actions/setup-java@v2
         with:
-          java-version: '21.0.6'
+          java-version: '17.0.14'
           distribution: 'adoptium'
       - name: Checkout repository
         uses: actions/checkout@v2
