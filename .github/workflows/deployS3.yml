@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Déclenche l'action à chaque fois qu'un commit est poussé sur la branche `main`
 
+permissions:
+      id-token: write
+      contents: read  
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Utilise une machine Ubuntu pour exécuter l'action
