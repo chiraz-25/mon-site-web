@@ -28,6 +28,7 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.5
       with:
-        organization: chiraz-25/mon-site-web
+        organization: chiraz-lab
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        extraArgs: '-X'
