@@ -28,6 +28,6 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.5
       with:
-        organization: chiraz-25
+        organization: chiraz GHRIBI
         token: ${{ secrets.SONAR_TOKEN }}
 
