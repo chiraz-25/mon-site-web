@@ -18,24 +18,17 @@ jobs:
         with:
           java-version: '21.0.6'
           distribution: 'adoptopenjdk'
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Cache SonarCloud dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.sonar/cache
-        key: ${{ runner.os }}-sonar-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
+      - name: Run SonarCloud scan
+        uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
           ${{ runner.os }}-sonar-
-
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1
-      with:
-        organization: chiraz-lab
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        extraArgs: '-X'
+          organization: chiraz-lab
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          extraArgs: '-X'
