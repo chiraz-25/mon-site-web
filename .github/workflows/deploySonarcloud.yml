@@ -29,5 +29,5 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@v1.5
       with:
         organization: chiraz-25/mon-site-web
-        token: ${{ secrets.SONAR_TOKEN }}
-
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
