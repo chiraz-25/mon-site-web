@@ -16,8 +16,8 @@ jobs:
       - name: Set up JDK 
         uses: actions/setup-java@v4.2.0
         with:
-          java-version: '17'
-          distribution: 'oracle'
+          java-version: '17.0,14'
+          distribution: 'temurin'
       - name: Checkout repository
         uses: actions/checkout@v2
 
